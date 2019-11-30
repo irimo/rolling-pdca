@@ -1,0 +1,26 @@
+{
+  "name": "rolling-pdca",
+  "version": "1.0.0",
+  "description": "## これはなに",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irimo/rolling-pdca.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irimo/rolling-pdca/issues"
+  },
+  "homepage": "https://github.com/irimo/rolling-pdca#readme",
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.14"
+  }
+}
