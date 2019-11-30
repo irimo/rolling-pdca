@@ -4,13 +4,40 @@
     <meta charset="UTF-8">
     <title>Sample</title>
     <script>
-        
-
+        window.onscroll = function()
+{
+    var scrollTop =
+        document.documentElement.scrollTop || // IE、Firefox、Opera
+        document.body.scrollTop;              // Chrome、Safari
+console.log(scrollTop);
+    var absdiv = document.getElementById("absdiv");
+    absdiv.style = "transform: rotate("+scrollTop+"deg)";
+}
     </script>
+    <style type="text/css">
+    #absdiv {
+      display: inline-block;
+      font-size: 3em;
+      position:fixed;
+      bottom:20px;
+      right:20px;
+    }
+     
+    .star1 {
+      animation: r1 1s linear infinite;
+    }
+     
+    @keyframes r1 {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+</style>
 </head>
 <body>
 <pre>
-    <div class="pdca-wrap"> </div>
+    <div id="absdiv">
+    <div class="pdca-wrap">PDCA<br> </div>
+</div>
     <div style="font-size: 90px;">
 P
 D
