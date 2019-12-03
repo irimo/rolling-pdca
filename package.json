@@ -1,26 +1,17 @@
 {
-  "name": "rolling-pdca",
-  "version": "1.0.0",
-  "description": "## これはなに",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "watch": "webpack -w"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/irimo/rolling-pdca.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/irimo/rolling-pdca/issues"
-  },
-  "homepage": "https://github.com/irimo/rolling-pdca#readme",
   "devDependencies": {
-    "typescript": "^3.7.2"
+    "ts-loader": "^5.4.3",
+    "typescript": "^3.4.4",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
   },
   "dependencies": {
-    "@types/node": "^12.12.14"
-  }
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2"
+  },
+  "private": true
 }
