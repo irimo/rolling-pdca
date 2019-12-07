@@ -11,11 +11,9 @@ import window from './window';
 
 @Component({
   template: `
-  <div id="absdiv">
-  <div class="pdca-wrap" v-bind:style="">PDCA<br> </div>
-  </div>
+  <div class="pdca-wrap" v-bind:style="{transform: styleObject}">PDCA<br> </div>
 `,
-  props   : ['mystyle'],
+  // props   : ['t_scrolltop'],
 })
 /*   <style type="text/css">
   #absdiv {
@@ -29,6 +27,7 @@ import window from './window';
  */
 export default class PdcaComponent extends Vue {
   scrollTop: number = 0;
+  styleObject: String = "rotate(100deg)"
   mounted(): void {
     window.addEventListener('scroll', this.scrollSpy);
   }
@@ -49,9 +48,8 @@ destroyed(): void {
       //     document.body.scrollTop;              // Chrome、Safari
       // var absdiv = document.getElementById("absdiv");
       // absdiv.style = "transform: rotate("+scrollTop+"deg)";
-      const el = this.$el.querySelector('#absdiv');
-      console.log(this.scrollTop);
-      // el.style = "transform: rotate("+this.scrollTop+"deg)";
+      this.styleObject = "rotate(" + this.scrollTop + "deg)";
+      // el.mystyle = "";
 
     }
   // }
