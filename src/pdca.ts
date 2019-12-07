@@ -1,16 +1,9 @@
-/*
-thank you
-- https://sansaisoba.qrunch.io/entries/NrmnZGUHE3xZhO3a
-- https://programmer-beginner.com/scroll-spy
-- https://mae.chab.in/archives/60167
-*/
 
-import Vue from 'vue';
-import Component from 'vue-class-component';
-import window from './window';  
 
-@Component({
-  template: `
+// @Component({
+  
+  // template: `
+  <template>
   <style type="text/css">
   #absdiv {
     display: inline-block;
@@ -20,11 +13,28 @@ import window from './window';
     right:20px;
   }
   </style>
-  <div id="absdiv">
+  <div id="absdiv" v-bind:style=";">
   <div class="pdca-wrap">PDCA<br> </div>
-`,
-  props   : ['clicked'],
-})
+  </template>
+// `,
+  // props   : ['clicked'],
+// })
+<script lang="ts">
+/*
+thank you
+- https://sansaisoba.qrunch.io/entries/NrmnZGUHE3xZhO3a
+- https://programmer-beginner.com/scroll-spy
+- https://mae.chab.in/archives/60167
+*/
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import window from './window';  
+
+// @Component({
+//   components: {
+//     'chrome-picker' : Chrome
+//   }
+// })
 export default class PdcaComponent extends Vue {
   scrollTop: number = 0;
   // window.foo = 'bar';  
@@ -43,11 +53,11 @@ destroyed(): void {
   // methods: {
   // window.onscroll = function()
   scrollSpy() {
-    window.onscroll = function () {
+    // window.onscroll = function () {
       this.scrollTop =
           document.documentElement.scrollTop || // IE、Firefox、Opera
           document.body.scrollTop;              // Chrome、Safari
-    };
+    // };
       // this.scrollTop =
       //     document.documentElement.scrollTop || // IE、Firefox、Opera
       //     document.body.scrollTop;              // Chrome、Safari
@@ -74,3 +84,4 @@ destroyed(): void {
       // },
     // },
   }
+  </script>
