@@ -1,9 +1,16 @@
+/*
+thank you
+- https://sansaisoba.qrunch.io/entries/NrmnZGUHE3xZhO3a
+- https://programmer-beginner.com/scroll-spy
+- https://mae.chab.in/archives/60167
+*/
 
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import window from './window';  
 
-// @Component({
-  
-  // template: `
-  <template>
+@Component({
+  template: `
   <style type="text/css">
   #absdiv {
     display: inline-block;
@@ -13,39 +20,16 @@
     right:20px;
   }
   </style>
-  <div id="absdiv" v-bind:style=";">
+  <div id="absdiv">
   <div class="pdca-wrap">PDCA<br> </div>
-  </template>
-// `,
+`,
   // props   : ['clicked'],
-// })
-<script lang="ts">
-/*
-thank you
-- https://sansaisoba.qrunch.io/entries/NrmnZGUHE3xZhO3a
-- https://programmer-beginner.com/scroll-spy
-- https://mae.chab.in/archives/60167
-*/
-import Vue from 'vue';
-import Component from 'vue-class-component';
-import window from './window';  
-
-// @Component({
-//   components: {
-//     'chrome-picker' : Chrome
-//   }
-// })
+})
 export default class PdcaComponent extends Vue {
   scrollTop: number = 0;
-  // window.foo = 'bar';  
   mounted(): void {
     window.addEventListener('scroll', this.scrollSpy);
   }
-//   mounted() {
-//      // 1. スクロールイベントにscrollSpyイベントを紐づける
-//     //  this.calculatePosition();
- 
-// },
 destroyed(): void {
   window.removeEventListener('scroll', this.scrollSpy);
 }
@@ -64,7 +48,8 @@ destroyed(): void {
       // var absdiv = document.getElementById("absdiv");
       // absdiv.style = "transform: rotate("+scrollTop+"deg)";
       const el = this.$el.querySelector('#absdiv');
-      el.style = "transform: rotate("+this.scrollTop+"deg)";
+      console.log(this.scrollTop);
+      // el.style = "transform: rotate("+this.scrollTop+"deg)";
 
     }
   // }
@@ -84,4 +69,3 @@ destroyed(): void {
       // },
     // },
   }
-  </script>
