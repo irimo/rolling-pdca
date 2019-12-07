@@ -8,7 +8,7 @@ new Vue({
       `<div class="app">
         <h1>Hello Vue.js!</h1>
         <my-component message="My Counter for TypeScript"></my-component>
-        <pdca></pdca>
+        <div style="position:fixed; right: 100px;bottom:100px;"><pdca></pdca></div>
       </div>`,
 
   components: {
