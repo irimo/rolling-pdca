@@ -29,25 +29,26 @@ constructor() {
         super();
         var plan: string = localStorage.getItem('plan1');
         this.t_plan = plan ? plan : "";
-        // var val_do: String = localStorage.getItem('do1') as String;
-        // this.t_do = val_do ? val_do : null;
-        // var check: String = localStorage.getItem('check1');
-        // this.t_check = check ? check : null;
-        // var action: String = localStorage.getItem('action1');
-        // this.t_action = action ? action : null;
+        var val_do: string = localStorage.getItem('do1');
+        this.t_do = val_do ? val_do : "";
+        var check: string = localStorage.getItem('check1');
+        this.t_check = check ? check : "";
+        var action: string = localStorage.getItem('action1');
+        this.t_action = action ? action : "";
     }
   mounted(): void {
-    this.$el.querySelector("#form-plan").addEventListener('blur', this.blurSpy);
-    this.$el.querySelector("#form-do").addEventListener('blur', this.blurSpy);
-    this.$el.querySelector("#form-check").addEventListener('blur', this.blurSpy);
-    this.$el.querySelector("#form-action").addEventListener('blur', this.blurSpy);
-    window.addEventListener('onbeforeunload', this.blurSpy);
+    this.$el.querySelector("#form-plan").addEventListener('keyup', this.blurSpy);
+    this.$el.querySelector("#form-do").addEventListener('keyup', this.blurSpy);
+    this.$el.querySelector("#form-check").addEventListener('keyup', this.blurSpy);
+    this.$el.querySelector("#form-action").addEventListener('keyup', this.blurSpy);
   }
   destroyed(): void {
-    // window.removeEventListener('scroll', this.scrollSpy);
   }
 
-  blurSpy() {
-      localStorage.setItem('plan1', this.t_plan);
+      blurSpy() {
+        localStorage.setItem('plan1', this.t_plan);
+        localStorage.setItem('do1', this.t_do);
+        localStorage.setItem('check1', this.t_check);
+        localStorage.setItem('action1', this.t_action);
     }
   }
