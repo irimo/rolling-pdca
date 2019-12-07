@@ -12,9 +12,9 @@ import window from './window';
   <div class="inputform">
   <form id="myform">
   <span>Plan: </span><input type="text" id="form-plan" v-model:value="t_plan" placeholder="計画を書こう" /><br />
-  <span>Plan: </span><input type="text" id="form-do" v-model:value="t_do" placeholder="やることに落としこもう" /><br />
-  <span>Plan: </span><input type="text" id="form-check" v-model:value="t_check" placeholder="やったこと確認しよう" /><br />
-  <span>Plan: </span><input type="text" id="form-action" v-model:value="t_action" placeholder="次になにする" /><br />
+  <span>Do: </span><input type="text" id="form-do" v-model:value="t_do" placeholder="やることに落としこもう" /><br />
+  <span>Check: </span><input type="text" id="form-check" v-model:value="t_check" placeholder="やったこと確認しよう" /><br />
+  <span>Action: </span><input type="text" id="form-action" v-model:value="t_action" placeholder="次になにする" /><br />
   </form>
   </div>
 `,
