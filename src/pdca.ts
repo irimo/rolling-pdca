@@ -11,7 +11,13 @@ import window from './window';
 
 @Component({
   template: `
-  <style type="text/css">
+  <div id="absdiv">
+  <div class="pdca-wrap" v-bind:style="">PDCA<br> </div>
+  </div>
+`,
+  props   : ['mystyle'],
+})
+/*   <style type="text/css">
   #absdiv {
     display: inline-block;
     font-size: 3em;
@@ -20,11 +26,7 @@ import window from './window';
     right:20px;
   }
   </style>
-  <div id="absdiv">
-  <div class="pdca-wrap">PDCA<br> </div>
-`,
-  // props   : ['clicked'],
-})
+ */
 export default class PdcaComponent extends Vue {
   scrollTop: number = 0;
   mounted(): void {
