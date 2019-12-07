@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import MyComponent from './sub';
+import PdcaComponent from './pdca';
 
 new Vue({
   el        : '#app',
@@ -10,6 +11,7 @@ new Vue({
       </div>`,
 
   components: {
-    'my-component': MyComponent
+    'my-component': MyComponent,
+    'pdca-component': PdcaComponent
   }
 });
