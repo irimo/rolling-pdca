@@ -11,22 +11,30 @@ import window from './window';
   template: `
   <div class="inputform">
   <form id="myform">
-  Plan: <input type="text" id="form-plan" v-model:value="t_plan" placeholder="計画を書こう"><br>
-  {{t_plan}}<br>
-  Do: <input type="text" id="form-do"><br>
-  Check: <input type="text" id="form-check"><br>
-  Action: <input type="text" id="form-action"><br>
+  <span>Plan: </span><input type="text" id="form-plan" v-model:value="t_plan" placeholder="計画を書こう" /><br />
+  <span>Plan: </span><input type="text" id="form-do" v-model:value="t_do" placeholder="やることに落としこもう" /><br />
+  <span>Plan: </span><input type="text" id="form-check" v-model:value="t_check" placeholder="やったこと確認しよう" /><br />
+  <span>Plan: </span><input type="text" id="form-action" v-model:value="t_action" placeholder="次になにする" /><br />
   </form>
   </div>
 `,
 })
 
 export default class InputForm extends Vue {
-  t_plan: String = "";
-    constructor() {
+        t_plan: string =  "";
+        t_do: string =  "";
+        t_check: string =  "";
+        t_action: string =  "";
+constructor() {
         super();
-        const plan:string = localStorage.getItem('plan1');
-        this.t_plan = plan;
+        var plan: string = localStorage.getItem('plan1');
+        this.t_plan = plan ? plan : "";
+        // var val_do: String = localStorage.getItem('do1') as String;
+        // this.t_do = val_do ? val_do : null;
+        // var check: String = localStorage.getItem('check1');
+        // this.t_check = check ? check : null;
+        // var action: String = localStorage.getItem('action1');
+        // this.t_action = action ? action : null;
     }
   mounted(): void {
     this.$el.querySelector("#form-plan").addEventListener('blur', this.blurSpy);
@@ -40,7 +48,6 @@ export default class InputForm extends Vue {
   }
 
   blurSpy() {
-    const plan: string = this.t_plan as string;
-      localStorage.setItem('plan1', plan);
+      localStorage.setItem('plan1', this.t_plan);
     }
   }
